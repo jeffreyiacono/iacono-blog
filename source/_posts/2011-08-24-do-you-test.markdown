@@ -4,6 +4,10 @@ title: "Do you test?"
 date: 2011-08-24 15:23
 comments: true
 categories: 
+- ruby
+- rails
+- testing
+- code
 ---
 
 Note: this was in response to a question asked on the [Dallas.rb](http://dallasrb.org/ "Dallas.rb homepage") group regarding if, how, and why you write tests (or specs, or whatever you want to call them).
