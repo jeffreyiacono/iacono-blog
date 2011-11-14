@@ -9,7 +9,7 @@
   <meta name="author" content="Jeff Iacono">
 
   
-  <meta name="description" content="Blog Archive Recent Posts Github Repos Status updating... @jeffreyiacono on Github $.domReady(function(){ if (!window.jXHR){ var jxhr = document. &hellip;">
+  <meta name="description" content="Blog Archive Recent Posts Latest Tweets Status updating... $.domReady(function(){ getTwitterFeed("jeffreyiacono", 3, false); }); Follow @ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,23 @@
 </section>
 
 <section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jeffreyiacono", 3, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jeffreyiacono" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @jeffreyiacono</a>
+  
+</section>
+
+
+<section>
   <h1>Github Repos</h1>
   <ul id="gh_repos">
     <li class="loading">Status updating...</li>
@@ -113,23 +130,6 @@
     });
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("jeffreyiacono", 3, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/jeffreyiacono" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @jeffreyiacono</a>
-  
 </section>
 
 
