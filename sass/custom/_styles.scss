@@ -39,6 +39,11 @@ body > nav {
 #content {
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
+
+  ul,
+  ol {
+    margin-left: 25px;
+  }
 }
 
 // remove the top dotted border of pagination section
