@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://iacono-blog.heroku.com # for now, thinking of a better name
+url: http://iacono.heroku.com # for now
 title: Iacono Central
 subtitle: Writings on Entrepreneurship, Technology, & Hustle
 author: Jeff Iacono # stuck with it being me, sorryz
