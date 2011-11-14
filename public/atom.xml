@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Iacono Central]]></title>
-  <link href="http://iacono-blog.heroku.com/atom.xml" rel="self"/>
-  <link href="http://iacono-blog.heroku.com/"/>
-  <updated>2011-11-14T11:44:53-06:00</updated>
-  <id>http://iacono-blog.heroku.com/</id>
+  <link href="http://iacono.heroku.com/atom.xml" rel="self"/>
+  <link href="http://iacono.heroku.com/"/>
+  <updated>2011-11-14T12:18:01-06:00</updated>
+  <id>http://iacono.heroku.com/</id>
   <author>
     <name><![CDATA[Jeff Iacono]]></name>
     
