@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Iacono Central</title>
+  <title>DRYing up those controller specs - Iacono Central</title>
   <meta name="author" content="Jeff Iacono">
 
   
@@ -19,7 +19,7 @@ Feel &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://iacono.heroku.com">
+  <link rel="canonical" href="http://iacono.heroku.com/writings/2011/04/09/drying-up-those-controller-specs">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -61,15 +61,12 @@ Feel &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/writings/2011/04/09/drying-up-those-controller-specs/">DRYing Up Those Controller Specs</a></h1>
+      <h1 class="entry-title">DRYing Up Those Controller Specs</h1>
     
     
       <p class="meta">
@@ -92,7 +89,7 @@ Feel &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>I recently had a bunch of duplicate code in my controller specs and wanted to share a solution I arrived at that DRYed things up significantly.
+<div class="entry-content"><p>I recently had a bunch of duplicate code in my controller specs and wanted to share a solution I arrived at that DRYed things up significantly.
 Feel free to use it and abuse it and if you have recommendations on how to improve it, let me know.</p>
 
 <p>First, the quick requirements and background: <em>all</em> controller methods must explicitly demonstrate that guests do not have access to certain resources and are told, upon any attempt to access them, that they must login in order gain access.</p>
@@ -303,18 +300,67 @@ end
 
 <p>The controller specs are cleaner, a big chunk of code duplication has been removed, and there is a main handler for these tests that does not (in my opinion) add too much complexity into the testing suite.</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Jeff Iacono</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2011-04-09T13:39:00-05:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/testing/'>testing</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iacono.heroku.com/writings/2011/04/09/drying-up-those-controller-specs/" data-via="jeffreyiacono" data-counturl="http://iacono.heroku.com/writings/2011/04/09/drying-up-those-controller-specs/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -331,7 +377,7 @@ end
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -348,7 +394,7 @@ end
 <section>
   <h1>Github Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/jeffreyiacono">@jeffreyiacono</a> on Github
@@ -381,6 +427,7 @@ end
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -400,7 +447,10 @@ end
       var disqus_shortname = 'iacono';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://iacono.heroku.com/writings/2011/04/09/drying-up-those-controller-specs/';
+        var disqus_url = 'http://iacono.heroku.com/writings/2011/04/09/drying-up-those-controller-specs/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

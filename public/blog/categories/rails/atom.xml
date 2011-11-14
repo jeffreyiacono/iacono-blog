@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Iacono Central]]></title>
-  <link href="http://iacono.heroku.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: rails | Iacono Central]]></title>
+  <link href="http://iacono.heroku.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://iacono.heroku.com/"/>
   <updated>2011-11-14T14:54:08-06:00</updated>
   <id>http://iacono.heroku.com/</id>
@@ -24,9 +24,9 @@ Feel free to use it and abuse it and if you have recommendations on how to impro
 <p>First, the quick requirements and background: <em>all</em> controller methods must explicitly demonstrate that guests do not have access to certain resources and are told, upon any attempt to access them, that they must login in order gain access.</p>
 
 <p>The first pass was to write the tests, get all to pass, then look to consolidate and improve the suites.
-Here&#8217;s the first pass:</p>
+Here's the first pass:</p>
 
-<div><script src='https://gist.github.com/1134284.js?file='></script>
+<p><div><script src='https://gist.github.com/1134284.js?file='></script>
 <noscript><pre><code># Client required that *all* routes for controllers are covered and 
 # do not allow guest access.
 #
@@ -115,19 +115,19 @@ describe GearsController do
 end
 
 # etc.</code></pre></noscript></div>
-
+</p>
 
 <p>These specs duplicate an awfully large amount of code.
 This is an issue because more lines of code translate into more maintenance, more potential areas to make mistakes, and more places that need to be updated when things change.
-(For example, what if we want to flash an alert of <em>&#8220;OH NOZ, SIGN IN FIRST PLZ&#8221;</em>?
+(For example, what if we want to flash an alert of <em>"OH NOZ, SIGN IN FIRST PLZ"</em>?
 I could find and replace, but that should be handled in one place.)</p>
 
 <p>In order to remedy these issues, I added a controller macro that includes <em>#it_should_block_access_to(action, options = {})</em>, which is passed an action (:index, :create, :update), maps each to a default method (:get, :post, :put) if none is specified, and generates the appropriate routing (member vs collections).
 It also handles format specification, such as :json, or setting any other arbitrary params via the options hash.</p>
 
-<p>Here&#8217;s the refactored code:</p>
+<p>Here's the refactored code:</p>
 
-<div><script src='https://gist.github.com/1134094.js?file='></script>
+<p><div><script src='https://gist.github.com/1134094.js?file='></script>
 <noscript><pre><code># Client required that *all* methods for controllers are covered and 
 # do not allow guest access.
 #
@@ -225,7 +225,7 @@ describe GearsController do
 end
 
 # etc.</code></pre></noscript></div>
-
+</p>
 
 <p>The controller specs are cleaner, a big chunk of code duplication has been removed, and there is a main handler for these tests that does not (in my opinion) add too much complexity into the testing suite.</p>
 ]]></content>
