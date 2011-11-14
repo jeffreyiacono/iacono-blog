@@ -1,2 +1,47 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+html {
+  background: #f5f5f5;
+}
+
+body > footer {
+  background: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+body > header {
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+
+  h1 {
+    font-size: 2.6em;
+    height: 145px;
+    width: 1200px;
+    background: url('/images/iacono-central-header.png') top left no-repeat;
+  }
+
+  h1,
+  h2 {
+    text-indent: -9999px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+body > nav {
+  padding-left: 40px;
+}
+
+#content {
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+// remove the top dotted border of pagination section
+#content div.pagination {
+  //background: none;
+}
