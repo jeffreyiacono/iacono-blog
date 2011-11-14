@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Iacono Central</title>
+  <title>Do you test? - Iacono Central</title>
   <meta name="author" content="Jeff Iacono">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://iacono.heroku.com">
+  <link rel="canonical" href="http://iacono.heroku.com/writings/2011/08/24/do-you-test">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -60,15 +60,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/writings/2011/08/24/do-you-test/">Do You Test?</a></h1>
+      <h1 class="entry-title">Do You Test?</h1>
     
     
       <p class="meta">
@@ -91,7 +88,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Note: this was in response to a question asked on the <a href="http://dallasrb.org/" title="Dallas.rb homepage">Dallas.rb</a> group regarding if, how, and why you write tests (or specs, or whatever you want to call them).</p>
+<div class="entry-content"><p>Note: this was in response to a question asked on the <a href="http://dallasrb.org/" title="Dallas.rb homepage">Dallas.rb</a> group regarding if, how, and why you write tests (or specs, or whatever you want to call them).</p>
 
 <p>Definitely test.
 It will feel weird / slow at first, but it helps you write much cleaner, more modular code.
@@ -176,22 +173,16 @@ My workflow is now:</p>
 </ul>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/writings/2011/04/09/drying-up-those-controller-specs/">DRYing Up Those Controller Specs</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jeff Iacono</span></span>
+
+      
 
 
 
@@ -203,236 +194,42 @@ My workflow is now:</p>
   
 
 
-<time datetime="2011-04-09T13:39:00-05:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
-        
-      </p>
+<time datetime="2011-08-24T15:23:00-05:00" pubdate data-updated="true">Aug 24<span>th</span>, 2011</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>I recently had a bunch of duplicate code in my controller specs and wanted to share a solution I arrived at that DRYed things up significantly.
-Feel free to use it and abuse it and if you have recommendations on how to improve it, let me know.</p>
-
-<p>First, the quick requirements and background: <em>all</em> controller methods must explicitly demonstrate that guests do not have access to certain resources and are told, upon any attempt to access them, that they must login in order gain access.</p>
-
-<p>The first pass was to write the tests, get all to pass, then look to consolidate and improve the suites.
-Here&#8217;s the first pass:</p>
-
-<div><script src='https://gist.github.com/1134284.js?file='></script>
-<noscript><pre><code># Client required that *all* routes for controllers are covered and 
-# do not allow guest access.
-#
-# There are several other controllers that, for guest test coverage,
-# are identical to the Items Controller spec below
-# Note: there are several non-CRUD methods; destroy makes a record
-#       inactive; there is no record removal revealed via the API (client's request)
-
-# spec/controllers/items_controller_spec.rb
-require 'spec_helper'
-
-describe ItemsController do
-  context 'guest' do
-    describe 'GET to index' do
-      before  { get :index }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'GET to show' do
-      before  { get :show, :id =&gt; 1 }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'GET to export' do
-      before  { get :export }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'GET to new' do
-      before  { get :new }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'POST to create' do
-      before  { post :create }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'GET to edit' do
-      before  { get :edit, :id =&gt; 1 }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'PUT to update' do
-      before  { put :update, :id =&gt; 1 }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'DELETE to destroy' do
-      before  { delete :destroy, :id =&gt; 1 }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-
-    describe 'PUT to activate' do
-      before  { put :activate, :id =&gt; 1 }
-      specify { response.should redirect_to(login_path) }
-      specify { flash.alert.should =~ /You must be logged in to access this page/ }
-    end
-  end
-end
-
-# spec/controllers/widgets_controller_spec.rb
-require 'spec_helper'
-
-describe WidgetsController do
-  context 'guest' do
-    # same code as ItemsControllerSpec above
-  end
-end
-
-# spec/controllers/gears_controller_spec.rb
-require 'spec_helper'
-
-describe GearsController do
-  context 'guest' do
-    # same code as ItemsControllerSpec above
-  end
-end
-
-# etc.</code></pre></noscript></div>
-
-
-<p>These specs duplicate an awfully large amount of code.
-This is an issue because more lines of code translate into more maintenance, more potential areas to make mistakes, and more places that need to be updated when things change.
-(For example, what if we want to flash an alert of <em>&#8220;OH NOZ, SIGN IN FIRST PLZ&#8221;</em>?
-I could find and replace, but that should be handled in one place.)</p>
-
-<p>In order to remedy these issues, I added a controller macro that includes <em>#it_should_block_access_to(action, options = {})</em>, which is passed an action (:index, :create, :update), maps each to a default method (:get, :post, :put) if none is specified, and generates the appropriate routing (member vs collections).
-It also handles format specification, such as :json, or setting any other arbitrary params via the options hash.</p>
-
-<p>Here&#8217;s the refactored code:</p>
-
-<div><script src='https://gist.github.com/1134094.js?file='></script>
-<noscript><pre><code># Client required that *all* methods for controllers are covered and 
-# do not allow guest access.
-#
-# To remove code duplication, add controller macro, update test suite.
-# Macro defaults to :html formatted requests and handles member vs collection (assumes :id)
-# Note that we can specify methods, formats, params, etc. along the lines of:
-#   it_should_block_access_to :index, :format =&gt; :json
-#   it_should_block_access_to :something, :method =&gt; :post
-#   it_should_block_access_to :index, :foo =&gt; :bar
-
-# spec/support/controller_macros.rb
-module ControllerMacros
-  def self.included(base)
-    base.extend(ClassMethods)
-  end
-
-  module ClassMethods
-    def default_method_for(action)
-      case action
-      when :index, :show, :new, :edit, :export; return :get
-      when :create;                             return :post
-      when :update, :activate;                  return :put
-      when :destroy;                            return :delete
-      else raise &quot;no default method for #{action}&quot;
-      end
-    end
-
-    def it_should_block_access_to(action, options = {})
-      options[:format] ||= :html
-      options[:id] = 1 if [:show, :edit, :destroy, :activate, :update].include?(action)
-
-      method = options.delete(:method) || default_method_for(action)
-
-      describe &quot;#{method.to_s.upcase} to #{action} via #{options[:format]}&quot; do
-        before  { send(method, action, options) }
-        specify { response.should redirect_to(login_path) }
-        specify { flash.alert.should =~ /You must be logged in to access this page/ }
-      end
-    end
-  end
-end
-
-RSpec.configuration.include ControllerMacros, :type =&gt; :controller
-
-
-# spec/controllers/items_controller_spec.rb
-require 'spec_helper'
-
-describe ItemsController do
-  context 'guest' do
-    it_should_block_access_to :index
-    it_should_block_access_to :show
-    it_should_block_access_to :export
-    it_should_block_access_to :new
-    it_should_block_access_to :create
-    it_should_block_access_to :edit
-    it_should_block_access_to :update
-    it_should_block_access_to :destroy
-    it_should_block_access_to :activate    
-  end
-end
-
-# spec/controllers/widgets_controller_spec.rb
-require 'spec_helper'
-
-describe WidgetsController do
-  context 'guest' do
-    it_should_block_access_to :index
-    it_should_block_access_to :show
-    it_should_block_access_to :export
-    it_should_block_access_to :new
-    it_should_block_access_to :create
-    it_should_block_access_to :edit
-    it_should_block_access_to :update
-    it_should_block_access_to :destroy
-    it_should_block_access_to :activate
-  end
-end
-
-# spec/controllers/gears_controller_spec.rb
-require 'spec_helper'
-
-describe GearsController do
-  context 'guest' do
-    it_should_block_access_to :index
-    it_should_block_access_to :show
-    it_should_block_access_to :export
-    it_should_block_access_to :new
-    it_should_block_access_to :create
-    it_should_block_access_to :edit
-    it_should_block_access_to :update
-    it_should_block_access_to :destroy
-    it_should_block_access_to :activate
-  end
-end
-
-# etc.</code></pre></noscript></div>
-
-
-<p>The controller specs are cleaner, a big chunk of code duplication has been removed, and there is a main handler for these tests that does not (in my opinion) add too much complexity into the testing suite.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iacono.heroku.com/writings/2011/08/24/do-you-test/" data-via="jeffreyiacono" data-counturl="http://iacono.heroku.com/writings/2011/08/24/do-you-test/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/writings/2011/04/09/drying-up-those-controller-specs/" title="Previous Post: DRYing up those controller specs">&laquo; DRYing up those controller specs</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -453,7 +250,7 @@ end
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -470,7 +267,7 @@ end
 <section>
   <h1>Github Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/jeffreyiacono">@jeffreyiacono</a> on Github
@@ -503,6 +300,7 @@ end
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -522,7 +320,10 @@ end
       var disqus_shortname = 'iacono';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://iacono.heroku.com/writings/2011/08/24/do-you-test/';
+        var disqus_url = 'http://iacono.heroku.com/writings/2011/08/24/do-you-test/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
