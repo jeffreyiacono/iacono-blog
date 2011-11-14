@@ -4,11 +4,11 @@
   <title><![CDATA[Iacono Central]]></title>
   <link href="http://iacono.heroku.com/atom.xml" rel="self"/>
   <link href="http://iacono.heroku.com/"/>
-  <updated>2011-11-14T12:21:15-06:00</updated>
+  <updated>2011-11-14T12:37:03-06:00</updated>
   <id>http://iacono.heroku.com/</id>
   <author>
     <name><![CDATA[Jeff Iacono]]></name>
-    
+    <email><![CDATA[jeff.iacono@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
