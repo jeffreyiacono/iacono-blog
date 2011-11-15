@@ -4,7 +4,7 @@
   <title><![CDATA[Iacono Central]]></title>
   <link href="http://iacono.heroku.com/atom.xml" rel="self"/>
   <link href="http://iacono.heroku.com/"/>
-  <updated>2011-11-14T18:50:16-06:00</updated>
+  <updated>2011-11-15T00:35:59-06:00</updated>
   <id>http://iacono.heroku.com/</id>
   <author>
     <name><![CDATA[Jeff Iacono]]></name>
@@ -18,7 +18,7 @@
     <link href="http://iacono.heroku.com/writings/2011/11/14/penalty-blox-chrome-extension/"/>
     <updated>2011-11-14T18:23:00-06:00</updated>
     <id>http://iacono.heroku.com/writings/2011/11/14/penalty-blox-chrome-extension</id>
-    <content type="html"><![CDATA[<p><img src="http://iacono.heroku.com/images/posts/penalty-blox.png" alt="PenaltyBlox" class="left" />
+    <content type="html"><![CDATA[<p><img class="left" src="http://iacono.heroku.com/images/posts/penalty-blox.png" title="'PenaltyBlox'" >
 Whether it is a designer ultra-tweeting about some conference she is at or a venture capitalist intensely describing his pursuit of the always-elusive &#8220;inbox zero&#8221;, sometimes you just want to mute someone you follow on Twitter.</p>
 
 <p>This extensions allows you to do just that.
