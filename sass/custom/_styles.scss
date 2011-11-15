@@ -15,28 +15,41 @@ body > header {
   padding-top: 0;
   padding-left: 0;
   padding-bottom: 0;
+  background: url('/images/logo/subway-sign-background.png') top left repeat-x;
+  height: 145px;
+
+  hgroup {
+    div.logo {
+      float: left;
+      padding-left: 30px;
+      padding-top: 15px;
+    }
+
+    div.subway-lines {
+      float: right;
+      background: url('/images/logo/subway-sign-lines.png') top right no-repeat;
+      width: 230px;
+      height: 50px;
+      margin-top: 20px;
+    }
+  }
 
   a#header-home-nav {
     position: absolute;
     top: 0;
     left: 0;
     height: 145px;
-    width: 980px;
   }
 
   h1 {
+    font-weight: bold;
     font-size: 2.6em;
-    height: 145px;
-    width: 980px;
-    background: url('/images/iacono-central-header.png') top left no-repeat;
   }
 
   h1,
   h2 {
-    text-indent: -9999px;
-    line-height: 0;
-    padding: 0;
-    margin: 0;
+    color: #fff;
+    font-family: Helvetica, sans-serif;
   }
 }
 
@@ -47,11 +60,6 @@ body > nav {
 #content {
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
-
-  ul,
-  ol {
-    margin-left: 25px;
-  }
 }
 
 // remove the top dotted border of pagination section
