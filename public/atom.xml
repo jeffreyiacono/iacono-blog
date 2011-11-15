@@ -4,7 +4,7 @@
   <title><![CDATA[Iacono Central]]></title>
   <link href="http://iacono.heroku.com/atom.xml" rel="self"/>
   <link href="http://iacono.heroku.com/"/>
-  <updated>2011-11-14T18:03:56-06:00</updated>
+  <updated>2011-11-14T18:31:33-06:00</updated>
   <id>http://iacono.heroku.com/</id>
   <author>
     <name><![CDATA[Jeff Iacono]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Penalty Blox Chrome Extension]]></title>
+    <link href="http://iacono.heroku.com/writings/2011/11/14/penalty-blox-chrome-extension/"/>
+    <updated>2011-11-14T18:23:00-06:00</updated>
+    <id>http://iacono.heroku.com/writings/2011/11/14/penalty-blox-chrome-extension</id>
+    <content type="html"><![CDATA[<p>Whether it is a designer ultra-tweeting about some conference she is at or a venture capitalist intensely describing his pursuit of the always-elusive &#8220;inbox zero&#8221;, sometimes you just want to mute someone you follow on Twitter.
+This extensions allows you to do just that.
+You can easily put accounts that you follow in the <em>penalty box</em>, where they will be silenced and feel shame.
+When you have deemed their sins absolved, you can let them out, free to fill your Twitter stream again.
+Penalty bloxed people are not notified in any way that they have been temporarily removed from your timeline.</p>
+
+<ul>
+<li><a href="https://github.com/jeffreyiacono/penalty-blox">View the source code</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg">Download it here</a> (<em>note:</em> Chrome browser only)</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Do you test?]]></title>
