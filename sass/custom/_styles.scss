@@ -21,13 +21,13 @@ body > header {
     top: 0;
     left: 0;
     height: 145px;
-    width: 1200px;
+    width: 980px;
   }
 
   h1 {
     font-size: 2.6em;
     height: 145px;
-    width: 1200px;
+    width: 980px;
     background: url('/images/iacono-central-header.png') top left no-repeat;
   }
 
@@ -51,10 +51,6 @@ body > nav {
   ul,
   ol {
     margin-left: 25px;
-  }
-
-  img.left {
-    float: left;
   }
 }
 

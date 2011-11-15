@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-<img src="/images/posts/penalty-blox.png" alt="PenaltyBlox" class="left" />
+{% img left /images/posts/penalty-blox.png 'PenaltyBlox' %}
 Whether it is a designer ultra-tweeting about some conference she is at or a venture capitalist intensely describing his pursuit of the always-elusive "inbox zero", sometimes you just want to mute someone you follow on Twitter.
 
 This extensions allows you to do just that.
