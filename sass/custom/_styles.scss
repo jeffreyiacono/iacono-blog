@@ -16,6 +16,14 @@ body > header {
   padding-left: 0;
   padding-bottom: 0;
 
+  a#header-home-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 145px;
+    width: 1200px;
+  }
+
   h1 {
     font-size: 2.6em;
     height: 145px;
