@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: karma | iacono.]]></title>
+  <link href="http://iacono.heroku.com/blog/categories/karma/atom.xml" rel="self"/>
+  <link href="http://iacono.heroku.com/"/>
+  <updated>2011-11-16T15:38:11-06:00</updated>
+  <id>http://iacono.heroku.com/</id>
+  <author>
+    <name><![CDATA[Jeff Iacono]]></name>
+    <email><![CDATA[jeff.iacono@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gift to my girlfriend and now you]]></title>
+    <link href="http://iacono.heroku.com/writings/2011/11/16/gift-to-my-girlfriend-and-now-to-you/"/>
+    <updated>2011-11-16T12:22:00-06:00</updated>
+    <id>http://iacono.heroku.com/writings/2011/11/16/gift-to-my-girlfriend-and-now-to-you</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/images/posts/gf-cast-1.jpg" width="200" title="'cast'" ></p>
+
+<p>My girlfriend recently had ankle surgery.</p>
+
+<p>The actual procedure was not terrible (as surgeries go), but the recovery process was, shall we say, not super fun.
+She was required to stay off her feet for 3ish weeks.
+During that time she was restrictued to sitting on the couch, day in and day out.</p>
+
+<p>I tried to help take her mind off of things when I could and her friends sent her a lot of very thoughtful presents.
+(Thanks again, by the way!)
+However, I did have to go to work and couldn't be around all the time.</p>
+
+<h2>Inspiration</h2>
+
+<p>A night or two into it, I had a thought: <em>What if I could bring her
+a little happiness throughout the day even when I'm not around</em>.
+An idea rushed into my brain.
+I ran over to my desk, cracked open my laptop, and begin furiously coding.
+2 hours later, <a href="http://hourlypuppy.com" title="Hourly Puppy">Hourly Puppy</a> was up and running.</p>
+
+<h2>Version 1.0</h2>
+
+<p>The core concept was every hour, on the hour, show her a cute puppy.
+<em>Deliver a little happiness every sixty minutes, even when I'm not around</em>.
+She loved it.
+I'd get emails from her showing me her favorite of the day. (Her favorite of all
+time is <a href="http://hourlypuppy.com/shared/G5FTGoFp1nxAPfcl" title="Destroy">this one</a>.)
+Other times I'd be in the other room and hear a burst of laughter and joy when the hour flipped.
+I was thrilled.</p>
+
+<h2>Now For Everyone</h2>
+
+<p>A few weeks later I was chatting with a friend of mine and mentioned the idea.
+He (yes, <em>he</em>) loved it too.
+So I decided to polish it up so everyone could enjoy it.</p>
+
+<p><a href="http://hourlypuppy.com"><img class="center" src="/images/posts/hourly-puppy-screenshot.png" width="500" title="'hourly puppy screenshot'" ></a></p>
+
+<h2>Why?</h2>
+
+<p>I've had a few people ask why I've dedicated time to such a silly project.
+My response is <em>why not?</em>.
+Development work doesn't always have to be about making money or building a business.
+I work on plenty of those types of projects through my <a href="http://elegantbuild.com">consulting company</a>.</p>
+
+<p>One of my favorite recent quotes is from Twitter creator and Square CEO Jack Dorsey where he urges you to <a href="http://gigaom.com/2011/11/10/square-roadmap-2011/">bake in some fun and whimsy into your projects</a>.
+While HourlyPuppy might take this to an extreme, building and managing it has been immensely rewarding:</p>
+
+<ul>
+<li>I made my girlfriend's recovery easier, even if just a little</li>
+<li>Each morning, I get to wake up and look at puppies as I load up the day's queue</li>
+<li>Random people send me really excited emails and pictures of their puppies</li>
+<li>I learned a lot working on the site's design and backend (especially
+the queuing system, which I'll cover in a future post)</li>
+</ul>
+
+
+<p>HourlyPuppy started out as a small gift to my girlfriend as a way to help her get through a difficult time. I hope it can bring a little happiness to your day as well, one hour at a time.</p>
+]]></content>
+  </entry>
+  
+</feed>
