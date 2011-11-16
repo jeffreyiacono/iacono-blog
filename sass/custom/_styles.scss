@@ -2,7 +2,7 @@
 // Add styles here to make changes without digging in too much
 
 html {
-  background: #f5f5f5;
+  background: #f5f5f5 url('/images/line-tile.png') top left repeat;
 }
 
 body > footer {
@@ -12,29 +12,14 @@ body > footer {
 }
 
 body > header {
-  padding-top: 0;
-  padding-left: 0;
-  padding-bottom: 0;
-  background: url('/images/logo/subway-sign-background.png') top left repeat-x;
-  height: 145px;
+  background: inherit;
 
   hgroup {
-    div.logo {
-      float: left;
-      margin-top: 15px;
-      margin-left: 15px;
-      padding-left: 115px;
-      background: url('/images/logo/subway-sign-downarrow.png') top left no-repeat;
-      min-height: 115px;
-    }
-
-    div.subway-lines {
-      float: right;
-      background: url('/images/logo/subway-sign-lines.png') top right no-repeat;
-      width: 230px;
-      height: 50px;
-      margin-top: 20px;
-    }
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    //left: -3.7em;
+    //width: 22em;
   }
 
   h1 {
@@ -42,15 +27,39 @@ body > header {
     font-size: 2.8em;
     margin-top: 0;
     padding-top: 0;
+
+    a,
+    a:visited {
+      color: #222;
+      text-shadow: rgba(0, 0, 0, 0.5) 0 0 8px;
+    }
   }
+
+  //h1::after {
+  //  width: 155px;
+  //  height: 138px;
+  //  content: "";
+  //  overflow: hidden;
+  //  text-align: left;
+  //  background-image: url('/images/logo/dino.png');
+  //  background-position: 50% 50%;
+  //  background-repeat: no-repeat;
+  //  position: absolute;
+  //  top: -0.15em;
+  //  right: -0.8em;
+  //  left: auto;
+  //  background-size: 100%;
+  //}
 
   h2 {
     letter-spacing: 2px;
+    font-style: italic;
+    color: #444;
+    font-size: 0.9em;
   }
 
   h1,
   h2 {
-    color: #fff;
     font-family: Helvetica, sans-serif;
   }
 }
@@ -59,9 +68,8 @@ body > nav {
   padding-left: 40px;
 }
 
-#content {
-  border-left: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+#main {
+  border: 1px solid #ddd;
 }
 
 // remove the top dotted border of pagination section
