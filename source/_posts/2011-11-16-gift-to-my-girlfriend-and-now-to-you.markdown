@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gift to my girlfriend and now you"
+title: "Gift to my girlfriend and now to you"
 date: 2011-11-16 12:22
 comments: true
 categories:

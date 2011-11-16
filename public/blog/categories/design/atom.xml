@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: design | iacono.]]></title>
+  <title><![CDATA[Category: design | Iacono Central]]></title>
   <link href="http://iacono.heroku.com/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://iacono.heroku.com/"/>
-  <updated>2011-11-16T15:38:11-06:00</updated>
+  <updated>2011-11-16T15:46:53-06:00</updated>
   <id>http://iacono.heroku.com/</id>
   <author>
     <name><![CDATA[Jeff Iacono]]></name>
